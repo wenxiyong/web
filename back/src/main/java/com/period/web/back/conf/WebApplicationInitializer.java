@@ -1,7 +1,7 @@
-package com.aitongyi.web.back.conf;
+package com.period.web.back.conf;
 
-import com.aitongyi.web.cache.conf.CacheConfig;
-import com.aitongyi.web.dao.conf.DatabaseConfig;
+import com.period.web.cache.conf.CacheConfig;
+import com.period.web.dao.conf.DatabaseConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;

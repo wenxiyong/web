@@ -1,4 +1,4 @@
-package com.aitongyi.web.back.conf;
+package com.period.web.back.conf;
 
 //import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.annotation.MapperScan;
@@ -17,10 +17,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableAspectJAutoProxy
 @EnableScheduling
 @ComponentScan(basePackages =
-        {"com.aitongyi.web.back.controller",
-         "com.aitongyi.web.service",
-         "com.aitongyi.web.task"})
-@MapperScan("com.aitongyi.web.dao.mapper")
+        {"com.period.web.back.controller",
+         "com.period.web.service",
+         "com.period.web.task"})
+@MapperScan("com.period.web.dao.mapper")
 public class MvcConfig extends WebMvcConfigurerAdapter {
  
     @Override

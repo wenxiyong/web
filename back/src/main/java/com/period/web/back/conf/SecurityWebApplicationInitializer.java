@@ -1,4 +1,4 @@
-package com.aitongyi.web.back.conf;
+package com.period.web.back.conf;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

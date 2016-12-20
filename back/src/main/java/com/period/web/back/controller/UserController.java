@@ -1,14 +1,13 @@
-package com.aitongyi.web.back.controller;
+package com.period.web.back.controller;
 
-import com.aitongyi.web.bean.User;
-import com.aitongyi.web.cache.CacheKey;
-import com.aitongyi.web.cache.CacheService;
-import com.aitongyi.web.service.UserService;
 import com.alibaba.fastjson.JSON;
+import com.period.web.bean.User;
+import com.period.web.cache.CacheKey;
+import com.period.web.cache.CacheService;
+import com.period.web.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
