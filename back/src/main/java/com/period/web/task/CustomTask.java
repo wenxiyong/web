@@ -34,8 +34,8 @@ public class CustomTask {
      *     </table>
      * </pre>
      */
-    @Scheduled(fixedRate = 1000 * 10,initialDelay = 1000 * 5)
-    private void taskRun(){
-        logger.info("CustomTask run ...");
-    }
+//    @Scheduled(fixedRate = 1000 * 10,initialDelay = 1000 * 5)
+//    private void taskRun(){
+//        logger.info("CustomTask run ...");
+//    }
 }

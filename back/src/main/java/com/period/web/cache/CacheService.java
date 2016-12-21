@@ -1,9 +1,11 @@
 package com.period.web.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
+
+import javax.annotation.Resource;
 
 /**
  * 缓存服务
@@ -11,8 +13,13 @@ import redis.clients.jedis.JedisPool;
  */
 @Component
 public class CacheService {
+
+
     @Autowired
-    private JedisPool jedisPool;
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Resource(name = "stringRedisTemplate")
+    private ValueOperations<String, String> valueOperations;
 
     /**
      * 设置缓存对象
@@ -20,15 +27,7 @@ public class CacheService {
      * @param value
      */
     public void set(String key,String value){
-        Jedis jedis = null;
-        try{
-            jedis = jedisPool.getResource();
-            jedis.set(key, value);
-        }finally{
-            if(jedis != null){
-                jedis.close();
-            }
-        }
+        valueOperations.set(key, value);
     }
 
     /**
@@ -37,15 +36,7 @@ public class CacheService {
      * @return
      */
     public String get(String key){
-        Jedis jedis = null;
-        try{
-            jedis = jedisPool.getResource();
-            return jedis.get(key);
-        }finally{
-            if(jedis != null){
-                jedis.close();
-            }
-        }
+        return valueOperations.get(key);
     }
 
     /**
@@ -53,15 +44,7 @@ public class CacheService {
      * @param key
      */
     public void del(String key){
-        Jedis jedis = null;
-        try{
-            jedis = jedisPool.getResource();
-            jedis.del(key);
-        }finally{
-            if(jedis != null){
-                jedis.close();
-            }
-        }
+        stringRedisTemplate.delete(key);
     }
 
 }
